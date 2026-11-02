@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>CHUDLOVER</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1> CHUDLOVER </h1>
+    <button id = "snackButton">Give him a snack </button>
+    <button id = "showerButton">Give him a shower</button>
+    <button id = "gameButton">Let him play video games</button>  
+
+    <p id = "busyMessage"> He is busy playing video games </p>
+
+    <script src="/javascript/game.js" defer></script>
   </body>
+
+  <div class="gameLayout">
+    <aside class="stats">
+      <h2>His stats</h2>
+      <p>Hunger: <span id="hunger"></span></p>
+      <p>Hygiene: <span id="hygiene"></span></p>
+      <p></p>
+    </aside>
+  </div>"
 </html>
