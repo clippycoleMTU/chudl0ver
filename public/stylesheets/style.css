@@ -1,8 +1,114 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+*{
+  box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+.gameLayout {
+  display:grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  max-width: 900px;
+  margin: 40px auto;
 }
+
+.stats {
+  padding: 16px;
+  background: #eee;
+  border-radius: 12px;
+}
+
+.gameArea{
+  padding: 24px;
+  background: #f8f3e8;
+  border-radius: 12px;
+}
+
+.introScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: black;
+  color: white;
+}
+
+.introScreen h1 {
+  font-family: impact, "Arial Black", sans-serif;
+  font-size: clamp(2.5rem, 10vw, 7rem);
+  text-align:center;
+  text-transform: uppercase;
+}
+
+.chudRoom {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+  margin-top: 20px;
+  display: grid;
+  place-items: center;
+  border: 3px solid #444;
+  border-radius: 12px;
+  background: linear-gradient(
+    to bottom,
+    #c9d9e8 0 75%,
+    #96785e 75% 100%
+  );
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#chud {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  transition: left 2s ease-in-out, top 2s ease-in-out;
+  transition: top 2s ease-in-out, left 2s ease-in-out;
+  animation: chudwaddle 0.3s ease-in-out infinite alternate;
+}
+
+#chudImage {
+  display: block;
+  width: 150px;
+  height: auto;
+}
+
+@keyframes chudwaddle {
+  from {rotate: -5deg;}
+  to {rotate: 5deg;}
+}
+
+#introScreen[hidden],
+#developerName[hidden],
+#gameScreen[hidden] {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .gameLayout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: 100%;
+    max-width: none;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 12px;
+  }
+
+  .stats,
+  .gameArea {
+    padding: 12px;
+  }
+
+  .chudRoom {
+    min-height: 45dvh;
+  } 
+  }

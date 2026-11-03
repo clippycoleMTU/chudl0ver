@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CHUDLOVER</title>
+    <title>My Pet Chud</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+     viewport-fit=cover">
   </head>
   <body>
-    <h1> CHUDLOVER </h1>
-    <button id = "snackButton">Give him a snack </button>
-    <button id = "showerButton">Give him a shower</button>
-    <button id = "gameButton">Let him play video games</button>  
+    <div id="introScreen" class="introScreen">
+      <h1 id="developerName" hidden>lippyColeGames</h1>
+    </div>
 
-    <p id = "busyMessage"> He is busy playing video games </p>
+    <div id="gameScreen" hidden>
+      <div class="gameLayout">
+      <aside class="stats">
+        <h2>His stats</h2>
+        <p>Hunger: <span id="hunger"></span></p>
+        <p>Hygiene: <span id="hygiene"></span></p>
+        <p>Happiness: <span id="happiness"></span></p>
+      </aside>
 
-    <script src="/javascript/game.js" defer></script>
+      <main class="gameArea">
+        <h1>My Pet Chud</h1>
+
+      <button id = "snackButton">Give him a snack </button>
+      <button id = "showerButton">Give him a shower</button>
+      <button id = "gameButton">Let him play video games</button>  
+      <p id = "message"></p>
+
+      <div class="chudRoom">
+        <span id="chud"><img id="chudImage" src= "/images/chudhappy.png" alt="My Pet Chud, he's happy!"></span>
+      </div>
+
+      </main>
+    </div>
+  </div>
+
+    <script src="/javascripts/game.js" defer></script>
   </body>
-
-  <div class="gameLayout">
-    <aside class="stats">
-      <h2>His stats</h2>
-      <p>Hunger: <span id="hunger"></span></p>
-      <p>Hygiene: <span id="hygiene"></span></p>
-      <p></p>
-    </aside>
-  </div>"
+ 
 </html>
