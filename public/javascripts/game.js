@@ -1,7 +1,7 @@
 const stats = {
     hunger: 70,
-    hygiene: 40,
-    happiness: 10
+    hygiene: 70,
+    happiness: 70
 }
 
 function changestat(name, amount) { 
